@@ -1,0 +1,85 @@
+@font-face {
+    font-family: zombies;
+    src: url("./assets/fonts/Nosifer-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: zombies1;
+    src: url("./assets/fonts/Creepster-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: zombies2;
+    src: url("./assets/fonts/Eater-Regular.ttf") format("truetype");
+}
+
+
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient( rgba(5, 5, 88, 0.774),rgb(56, 4, 61));    
+}
+.title{
+    font-family: zombies;
+    font-size: 3em;
+    align-items: center;
+    justify-content: center;
+    color: chartreuse;
+    
+}
+
+.wrapper{
+    padding: 25px;
+    height:500px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+.cards, .card, .view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    height: 100%;
+    width: 90%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards .card{
+    position: relative;
+    perspective: 600px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    height: calc(100% / 4 - 10px );
+    width: calc(100% / 4 - 10px );
+    
+}
+.cards .card .view{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    border-radius: 9px;
+    backface-visibility: hidden;
+    transition: transform 0.35s linear;
+    border-shadow: 0 4px 12px rgba(0,0,0,0.3)
+}
+
+.card .back-view {
+   transform: rotateY(90deg);
+}
+ img{
+    max-width: 40px;
+}
+.card:hover .front-view {
+    transform: rotateY(90deg);
+}
+.card:hover .back-view {
+    transform: rotateY(0);
+}
